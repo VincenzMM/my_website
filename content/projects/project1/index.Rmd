@@ -35,7 +35,7 @@ library(ggplot2)
 ```
 
 ```{r listing_data, eval=TRUE, warning=FALSE}
-titanic <- read_csv(here::here("data", "titanic.csv"))
+titanic <- read_csv("titanic.csv")
 glimpse(titanic)
 ```
 
