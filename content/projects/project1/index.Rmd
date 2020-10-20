@@ -1,7 +1,7 @@
 ---
-title: "Titanic"
+title: "Sinking of the Titanic"
 author: "Vincenz Mautner-Markhof"
-date: "18/10/2020"
+date: "2020-10-20"
 output:
   html_document:
     theme: flatly
@@ -34,6 +34,8 @@ library(dplyr)
 library(ggplot2)
 ```
 
+While exploring the internet for interesting data I came across this dataset which gives information about the passengers on the Titanic, such as the class, age, sex and if they survived or not. In this analysis I will explore the survival rate across different variables.
+
 ```{r listing_data, eval=TRUE, warning=FALSE}
 titanic <- read_csv("titanic.csv")
 glimpse(titanic)
@@ -46,13 +48,13 @@ titanic$Sex <- as.factor(titanic$Sex)
 titanic$Embarked <- as.factor(titanic$Embarked)
 ```
 
-What was the survival rate? 
+Survival rate
 
 ```{r}
 prop.table(table(titanic$Survived))
 ```
 
-What was the survival rate by gender?
+Survival rate by gender
 
 ```{r}
 ggplot(titanic, aes(x = Sex, fill = Survived)) + 
@@ -62,7 +64,7 @@ ggplot(titanic, aes(x = Sex, fill = Survived)) +
        title = "Titanic Survival Rates by Sex")
 ```
 
-What was the survival rate by class of ticket? 
+Survival rate by class of ticket
 
 ```{r}
 ggplot(titanic, aes(x = Pclass, fill = Survived)) + 
@@ -72,7 +74,7 @@ ggplot(titanic, aes(x = Pclass, fill = Survived)) +
        title = "Titanic Survival Rates by Pclass")
 ```
 
-What was the survival rate by class of ticket and gender?
+Survival rate by class of ticket and gender
 
 ```{r}
 ggplot(titanic, aes(x = Sex, fill = Survived)) + 
@@ -83,7 +85,7 @@ ggplot(titanic, aes(x = Sex, fill = Survived)) +
        title = "Titanic Survival Rates by Pclass and Sex")
 ```
 
-What is the distribution of passenger ages?
+Distribution of passenger ages
 
 ```{r}
 ggplot(titanic, aes(x = Age)) +
@@ -94,7 +96,7 @@ ggplot(titanic, aes(x = Age)) +
        title = "Titanic Age Distribtion")
 ```
 
-What are the survival rates by age?
+Survival rates by age
 
 ```{r}
 ggplot(titanic, aes(x = Age, fill = Survived)) +
@@ -115,7 +117,7 @@ ggplot(titanic, aes(x = Age, fill = Survived)) +
        title = "Titanic Survival Rates by Age, Pclass and Sex")
 ```
 
-What is the survival rates by age when segmented by gender and class of ticket?
+Survival rates by age segmented by gender and class of ticket
 
 ```{r}
 ggplot(titanic, aes(x = Age, fill = Survived)) +

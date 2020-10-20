@@ -1,7 +1,7 @@
 ---
-title: "Session 6: Homework 3"
-author: "Your name goes here"
-date: "`r Sys.Date()`"
+title: "IMDB Ratings"
+author: "Vincenz Mautner-Markhof"
+date: "2020-10-20"
 output:
   html_document:
     theme: flatly
@@ -11,7 +11,6 @@ output:
     toc_float: yes
     code_folding: show
 ---
-
 
 ```{r, setup, echo=FALSE}
 knitr::opts_chunk$set(
@@ -29,7 +28,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-
 ```{r load-libraries, echo=FALSE}
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
 library(mosaic)
@@ -46,29 +44,12 @@ library(openintro)
 library(tidyquant)
 ```
 
-# IMDB ratings: Differences between directors
-
-Recall the IMBD ratings data. I would like you to explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. I have already calculated the confidence intervals for the mean ratings of these two directors and as you can see they overlap. 
-
-
-```{r directors, echo=FALSE, out.width="100%"}
-knitr::include_graphics(here::here("images", "directors.png"), error = FALSE)
-```
-
-First, I would like you to reproduce this graph. You may find `geom_errorbar()` and `geom_rect()` useful.
-
-In addition, you will run a hpothesis test. You should use both the `t.test` command and the `infer` package to simulate from a null distribution, where you assume zero difference between the two.
-
-> Before anything, write down the null and alternative hypotheses, as well as the resulting test statistic and the associated t-stat or p-value. At the end of the day, what do you conclude?
-
-You can load the data and examine its structure
+In this analysis we will explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not.
 
 ```{r load-movies-data}
 movies <- read_csv("movies.csv")
 glimpse(movies)
 ```
-
-Your R code and analysis should go here. If you want to insert a blank chunk of R code you can just hit `Ctrl/Cmd+Alt+I` 
 
 ```{r}
 movies_rating<-movies%>%filter(director %in% c("Steven Spielberg" , "Tim Burton" )) %>% select(director,rating)
@@ -102,6 +83,8 @@ ggplot(CI_rating,
   theme(legend.position = "none")+ geom_text(aes(label=round(mean_rating,2),mean_rating=mean_rating+0.5),position = position_dodge(1.5),vjust = -1)
  
 ```
+
+Now we will run a hypothesis test using the 't.test' command.
 
 ```{r}
 t.test(rating~director,data=movies_rating)

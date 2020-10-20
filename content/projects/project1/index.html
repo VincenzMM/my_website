@@ -1,7 +1,7 @@
 ---
-title: "Titanic"
+title: "Sinking of the Titanic"
 author: "Vincenz Mautner-Markhof"
-date: "18/10/2020"
+date: "2020-10-20"
 output:
   html_document:
     theme: flatly
@@ -14,6 +14,7 @@ output:
 
 
 
+<p>While exploring the internet for interesting data I came across this dataset which gives information about the passengers on the Titanic, such as the class, age, sex and if they survived or not. In this analysis I will explore the survival rate across different variables.</p>
 <pre class="r"><code>titanic &lt;- read_csv(&quot;titanic.csv&quot;)
 glimpse(titanic)</code></pre>
 <pre><code>## Rows: 891
@@ -34,26 +35,26 @@ glimpse(titanic)</code></pre>
 titanic$Survived &lt;- as.factor(titanic$Survived)
 titanic$Sex &lt;- as.factor(titanic$Sex)
 titanic$Embarked &lt;- as.factor(titanic$Embarked)</code></pre>
-<p>What was the survival rate?</p>
+<p>Survival rate</p>
 <pre class="r"><code>prop.table(table(titanic$Survived))</code></pre>
 <pre><code>## 
 ##     0     1 
 ## 0.616 0.384</code></pre>
-<p>What was the survival rate by gender?</p>
+<p>Survival rate by gender</p>
 <pre class="r"><code>ggplot(titanic, aes(x = Sex, fill = Survived)) + 
   theme_bw() +
   geom_bar() +
   labs(y = &quot;Passenger Count&quot;,
        title = &quot;Titanic Survival Rates by Sex&quot;)</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="648" style="display: block; margin: auto;" /></p>
-<p>What was the survival rate by class of ticket?</p>
+<p>Survival rate by class of ticket</p>
 <pre class="r"><code>ggplot(titanic, aes(x = Pclass, fill = Survived)) + 
   theme_bw() +
   geom_bar() +
   labs(y = &quot;Passenger Count&quot;,
        title = &quot;Titanic Survival Rates by Pclass&quot;)</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="648" style="display: block; margin: auto;" /></p>
-<p>What was the survival rate by class of ticket and gender?</p>
+<p>Survival rate by class of ticket and gender</p>
 <pre class="r"><code>ggplot(titanic, aes(x = Sex, fill = Survived)) + 
   theme_bw() +
   facet_wrap(~ Pclass) +
@@ -61,7 +62,7 @@ titanic$Embarked &lt;- as.factor(titanic$Embarked)</code></pre>
   labs(y = &quot;Passenger Count&quot;,
        title = &quot;Titanic Survival Rates by Pclass and Sex&quot;)</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-5-1.png" width="648" style="display: block; margin: auto;" /></p>
-<p>What is the distribution of passenger ages?</p>
+<p>Distribution of passenger ages</p>
 <pre class="r"><code>ggplot(titanic, aes(x = Age)) +
   theme_bw() +
   geom_histogram(binwidth = 5) +
@@ -69,7 +70,7 @@ titanic$Embarked &lt;- as.factor(titanic$Embarked)</code></pre>
        x = &quot;Age (binwidth = 5)&quot;,
        title = &quot;Titanic Age Distribtion&quot;)</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-6-1.png" width="648" style="display: block; margin: auto;" /></p>
-<p>What are the survival rates by age?</p>
+<p>Survival rates by age</p>
 <pre class="r"><code>ggplot(titanic, aes(x = Age, fill = Survived)) +
   theme_bw() +
   geom_histogram(binwidth = 5) +
@@ -85,7 +86,7 @@ titanic$Embarked &lt;- as.factor(titanic$Embarked)</code></pre>
        x = &quot;Survived&quot;,
        title = &quot;Titanic Survival Rates by Age, Pclass and Sex&quot;)</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-8-1.png" width="648" style="display: block; margin: auto;" /></p>
-<p>What is the survival rates by age when segmented by gender and class of ticket?</p>
+<p>Survival rates by age segmented by gender and class of ticket</p>
 <pre class="r"><code>ggplot(titanic, aes(x = Age, fill = Survived)) +
   theme_bw() +
   facet_wrap(Sex ~ Pclass) +
