@@ -86,7 +86,7 @@ disqusShortname = ""
     # To change the background image on the homepage banner, replace 'banner.jpg' in
     # the 'static/img' folder.
     title = "Welcome to my website"
-    subtitle = "AN AMAMZING SITE DESIGNED BY VINCENZ MARKHOF AND RELEASED DURING THE MFA COURSE"
+    subtitle = "AN AMAMZING SITE DESIGNED BY VINCENZ AND RELEASED DURING THE MFA COURSE"
     buttonText = "Explore my site"
 
 
@@ -144,15 +144,15 @@ disqusShortname = ""
     enable = true
     title = "About me"
     subtitle = """I am a 23-year old Autrian with an interest in strategy and finance, who studied Business at the Vienna University of Economics and Business and is currently reading a Masters in Financial Analysis degree at London Business School."""
-    buttonText = "Get Started"
-    url = "blogs"
+    # buttonText = "Get Started"
+    # url = "blogs"
 
 
   # Contact section
   [params.contact]
-    enable = true
-    buttonSend = "Send message"
-    buttonClear = "Clear"
+    # enable = true
+    # buttonSend = "Send message"
+    # buttonClear = "Clear"
 
     # Since this template is static, the contact form uses www.formspree.io as a
     # proxy. The form makes a POST request to their servers to send the actual
@@ -172,7 +172,7 @@ disqusShortname = ""
     # by copying the corresponding map with frontmatter code.
     [[params.contact.email]]
     title = "Email"
-    email = "vincenzmm@gmx.at"
+    email = "vincenzm.mfa2021@london.edu"
 
     [[params.contact.phone]]
     title = "Call me maybe"
@@ -187,7 +187,7 @@ disqusShortname = ""
   # Footer section
   [params.footer]
     enable = true
-    copyright = "Company Name"
+    copyright = "Vincenz Mautner-Markhof"
 
     # Uses font awesome icons
     [[params.footer.social]]
