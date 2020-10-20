@@ -94,7 +94,7 @@ disqusShortname = ""
     [[params.tiles.showcase]]
       title = "About me"
       subtitle = "Get to know my life experiences"
-      image = "pic01.jpg"
+      image = "projects/project0_image.jpeg"
       url = "projects/project0"
 
     [[params.tiles.showcase]]
@@ -104,10 +104,10 @@ disqusShortname = ""
       url = "projects/project1"
 
     [[params.tiles.showcase]]
-      title = "Magna"
-      subtitle = "Lorem Etiam Nullam"
-      image = "pic03.jpg"
-      url = "blogs/magna"
+      title = "IMDB Ratings"
+      subtitle = "Comparing Stephen Spielberg and Tim Burton"
+      image = "projects/project2_image.jpeg"
+      url = "projects/project1"
 
     [[params.tiles.showcase]]
       title = "Ipsum"
