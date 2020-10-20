@@ -141,15 +141,15 @@ glimpse(df)</code></pre>
 <p>This may seem long but it should be easy to produce the following three plots</p>
 <div id="yields-on-us-rates-by-duration-since-1960" class="section level3">
 <h3>Yields on US rates by duration since 1960</h3>
-<p><img src="/Users/vincenz/Public/my_website/images/yield_curve1.png" width="100%" style="display: block; margin: auto;" /><img src="/projects/project3/yield_curve_files/figure-html/yield_curve_1-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="/Users/vincenz/Public/my_website/images/yield_curve1.png" width="100%" style="display: block; margin: auto;" /><img src="index_files/figure-html/yield_curve_1-2.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="monthly-yields-on-us-rates-by-duration-since-1999-on-a-year-by-year-basis" class="section level3">
 <h3>Monthly yields on US rates by duration since 1999 on a year-by-year basis</h3>
-<p><img src="/Users/vincenz/Public/my_website/images/yield_curve2.png" width="100%" style="display: block; margin: auto;" /><img src="/projects/project3/yield_curve_files/figure-html/yield_curve_2-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="/Users/vincenz/Public/my_website/images/yield_curve2.png" width="100%" style="display: block; margin: auto;" /><img src="index_files/figure-html/yield_curve_2-2.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="month-and-10-year-yields-since-1999" class="section level3">
 <h3>3-month and 10-year yields since 1999</h3>
-<p><img src="/Users/vincenz/Public/my_website/images/yield_curve3.png" width="100%" style="display: block; margin: auto;" /><img src="/projects/project3/yield_curve_files/figure-html/yield_curve_3-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="/Users/vincenz/Public/my_website/images/yield_curve3.png" width="100%" style="display: block; margin: auto;" /><img src="index_files/figure-html/yield_curve_3-2.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>According to <a href="https://en.wikipedia.org/wiki/List_of_recessions_in_the_United_States">Wikipedia’s list of recession in the United States</a>, since 1999 there have been two recession in the US: between Mar 2001–Nov 2001 and between Dec 2007–June 2009. Does the yield curve seem to flatten before these recessions? Can a yield curve flattening really mean a recession is coming in the US? Since 1999, when did short-term (3 months) yield more than longer term (10 years) debt?</p>
 <p>Besides calculating the spread (10year - 3months), there are a few things we need to do to produce our final plot</p>
 <ol style="list-style-type: decimal">
@@ -218,7 +218,7 @@ ggplot(yield_cummulative, aes(x = date, y = spread)) +            #create ggplot
   labs(title = &quot;Yield Curve Inversions&quot;, subtitle = &quot;Difference in % points, monthly averages \nShaded areas represent recession&quot;, y = &quot;(10 year-3 month) spread yield in %&quot;, caption = &quot;Source: FRED, Federal Reserve Bank of St. Louis&quot;, x = &quot;&quot;) +
   geom_rect(data = recessions, inherit.aes = FALSE, aes(xmin = From, xmax = To, ymin = -Inf, ymax = Inf), fill = &quot;grey&quot;, alpha = 0.8) + #recessions in grey
   geom_hline(yintercept = 0, color = &quot;black&quot;)   #add black line at yield spread = 0</code></pre>
-<p><img src="/projects/project3/yield_curve_files/figure-html/graph-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="index_files/figure-html/graph-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>
