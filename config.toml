@@ -82,7 +82,7 @@ disqusShortname = ""
     # To change the background image on the homepage banner, replace 'banner.jpg' in
     # the 'static/img' folder.
     title = "Welcome to my website"
-    subtitle = "AN AMAMZING SITE DESIGNED BY VINCENZ MARKHOF AND RELEASED DURING THE MFA COURSE."
+    subtitle = "AN AMAMZING SITE DESIGNED BY VINCENZ MARKHOF AND RELEASED DURING THE MFA COURSE"
     buttonText = "Explore my site"
 
 
@@ -138,12 +138,8 @@ disqusShortname = ""
   # Section Type Two
   [params.two]
     enable = true
-    title = "Massa libero"
-    subtitle = """Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. 
-    Mauris aliquet magna magna sed nunc rhoncus pharetra. 
-    Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. 
-    Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero.
-    Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus."""
+    title = "About me"
+    subtitle = """I am a 23-year old Autrian with an interest in strategy and finance, who studied Business at the Vienna University of Economics and Business and is currently reading a Masters in Financial Analysis degree at London Business School."""
     buttonText = "Get Started"
     url = "blogs"
 
