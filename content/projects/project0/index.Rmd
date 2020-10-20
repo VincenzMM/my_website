@@ -1,16 +1,2 @@
----
-	categories:
-	- ""
-	- ""
-	date: "2020-10-20"
-	description:  ''
-	draft: false
-	image: projects/project0_image.jpeg
-	keywords: ""
-	slug: blog2
-	title: About me
-	---
-	
 
-This is me.
-
+<iframe src="CV.pdf" width="100%" height="500px"></iframe>
