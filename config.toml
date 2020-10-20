@@ -100,14 +100,14 @@ disqusShortname = ""
     [[params.tiles.showcase]]
       title = "Sinking of the Titanic"
       subtitle = "Exploring the survival rates"
-      image = "projects/project1_image.jpeg"
+      image = "projects/project1_image.jpg"
       url = "projects/project1"
 
     [[params.tiles.showcase]]
       title = "IMDB Ratings"
       subtitle = "Comparing Stephen Spielberg and Tim Burton"
-      image = "projects/project2_image.jpeg"
-      url = "projects/project1"
+      image = "projects/project2_image.jpg"
+      url = "projects/project2"
 
     [[params.tiles.showcase]]
       title = "Ipsum"
